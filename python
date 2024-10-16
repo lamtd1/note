@@ -84,3 +84,6 @@ list.insert(index, value)
 list.remove(value)
 list.pop(index)// .pop() last element
 .extend(list/ dict/ tuple/)
+
+- tuple - immutable
+tuple = ("val1", "val2", "val3")
