@@ -1,7 +1,7 @@
 - build-in func
 str()
 int()
-list()
+list()//convert map
 tuple()//convert an iterable (like a list, string, or set) into a tuple
 print()
 type()
