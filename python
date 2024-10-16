@@ -2,6 +2,7 @@
 str()
 int()
 list()
+tuple()//convert an iterable (like a list, string, or set) into a tuple
 print()
 type()
 sorted()//does not change the iterable that it sorts. 
