@@ -1,0 +1,85 @@
+- build-in func
+str()
+int()
+print()
+type()
+sorted()//does not change the iterable that it sorts. 
+min() max()
+len()
+list()
+len()
+next() // to traverse the list.
+
+- annotation to easy to debug error, great for OOP, not so much for DA 
+name: int = 3
+l: list[int]
+
+- type
+int, float, string
+
+- function
+def func_name(param):
+...//code here
+...return res1, res2, res3
+
+- lambda // one expression only
+
+lambda [arguments] : expression
+square = lambda x : x * x
+n = square(5)
+
+lambda *argument : expression // can take any number of argument x[0], x[1], x[2]
+
+anonymous -> lambda function
+(lambda x : print(x*x))(5)
+
+- condition
+if, elif, else
+if condition:
+...
+elif condition:
+...
+else:
+...
+
+- while loop
+initializer
+while condition:
+...//code here
+... increment
+
+- for loop
+for a in Object/ List:
+for a in range(number + 1):
+for x in range(first, last + 1, step):
+for x in [a, b, c]:
+
+- map(function/ lambda function, LIST)// apply function to every elements in LIST
+
+- zipped = zip(first_list, second_list)//bind 2 or more iterables (list, tuple, string) into a map-like object
+x, y = zip(*zipped)// unzip object
+
+- string - slicing - immutable
+string[start:end+1]
+string[-index:] // start from the end
+string = string1 + string2
+string = "string";
+string = 'string';
+string = "string" * 3 
+string[1]
+string.index(); .upper() .lower() .strip() .lstrip() .rstrip()
+.count() .endswith() .isnumeric() .split()
+"delimiter".join(LIST) 
+
+- .format
+1.print("{name:>6.2f} {age:.3d}".format(name = "J", age = 12))
+2.print("{1} is my {0}, Hi {1}".format(friend, name))
+3.print("{name} I'm {pos}".format(pos="Brok", name="Hi"))
+
+- list - mutable
+list = ["val1", "val2", "val3"]
+list.append(value)//last
+list.insert(index, value)
+list.remove(value)
+list.pop(index)// .pop() last element
+.extend(list/ dict/ tuple/)
