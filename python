@@ -1,13 +1,14 @@
 - build-in func
 str()
 int()
+list()
 print()
 type()
 sorted()//does not change the iterable that it sorts. 
 min() max()
 len()
-list()
-len()
+enumerate()
+
 next() // to traverse the list.
 
 - annotation to easy to debug error, great for OOP, not so much for DA 
