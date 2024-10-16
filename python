@@ -83,7 +83,7 @@ list.append(value)//last
 list.insert(index, value)
 list.remove(value)
 list.pop(index)// .pop() last element
-.extend(list/ dict/ tuple/)
+list.extend(list/ dict/ tuple)// ~ concat 2 list
 
 - tuple - immutable
 tuple = ("val1", "val2", "val3")
