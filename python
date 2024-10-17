@@ -88,3 +88,10 @@ list.extend(list/ dict/ tuple)// ~ concat 2 list
 
 - tuple - immutable
 tuple = ("val1", "val2", "val3")
+
+- dict
+dict = {"val1" : 1, "val2" : 3}
+print(dict["val2"])//3
+dict["val3"] = 10// dict = {"val1" : 1, "val2" : 3, "val3" : 10}
+del dict["val3"]
+"val1" in dict // True
