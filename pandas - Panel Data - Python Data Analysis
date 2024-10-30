@@ -1,5 +1,7 @@
 It has functions for analyzing, cleaning, exploring, and manipulating data.
-
+CHÚ Ý: 
+df.loc[i] : truy cập vào CỘT
+df[i] : truy cập vào HÀNG
 import pandas as pd
 
 #SERIES: 1 cột trong table - mảng 1 chiều chứa dữ liệu
@@ -18,4 +20,42 @@ myvar = pd.Series(calories, index = ["day1", "day2"]) // Dùng để chỉ đị
 
 #DATAFRAME
 mảng 2D, chứa cả hàng và cột
-pd.DataFrame(myvar)
+
+df = pd.DataFrame(myvar)
+df.loc[i] // truy cập HÀNG i lúc này là SERIES
+df.loc[[i]] // truy cập HÀNG i lúc này là DATAFRAME
+
+#Load Files Into a DataFrame
+dùng với google - drive
+from google.colab import drive
+drive.mount('/content/drive')
+file_path = '/content/drive/example.csv'
+
+1. Read .csv file
+df = pd.read_csv(file_path) // Tự chuyển sang DataFrame
+print(df) // Nếu set dữ liệu dài -> trả 10 dòng
+print(df.to_string()) // In hết dữ liệu ra
+pd.options.display.max_rows = 10000 // Tăng số cột có thể hiển thị lên
+
+2. Read JSON file
+df = pd.read_json('file.json')
+print(df.to_string()) 
+print(df.head(i)) // in i dòng đầu tiên
+print(df.tail(i)) // in i dòng cuối
+print(df.info()) // in thông tin
+JSON = Python Dictionary
+
+#CLEANING DATA : 
+1. Empty cells
+- DELETE NAN
+new_df = df.dropna() // trả df mới, không ảnh hưởng df ban đầu
+df.dropna(inplace = True)
+df["index"].dropna() // drop Na ở 1 CỘT cụ thể 
+
+- FILL NAN
+new_df = df.fillna(fill_value) // trả df mới, lấp đầy NaN với fill_value
+df.fillna(fill_value, inplace = True)
+
+2. Data in wrong format
+3. Wrong data
+4. Duplicates
