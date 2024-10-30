@@ -1,3 +1,4 @@
+linear algebra, fourier transform, and matrices
 #create an array:
 arr = np.narray([1,2,3]) // (1,2,3) / Tuples is OK too
 arr = np.array([[2],[4]])
@@ -22,7 +23,7 @@ print(arr.base) / RETURN ORIGINAL ARRAY
 #array shape
 array.ndim // trả về số chiều
 array.shape // hình dáng
-array.reshape / này dùng nhiều -> TRỎ về MẢNG BAN ĐÂU -> pass argument vào và -1 đỡ phải tính -> reshape(-1) ép thảng
+array.reshape(2,2,-1) / này dùng nhiều -> TRỎ về MẢNG BAN ĐÂU -> pass argument vào và -1 đỡ phải tính -> reshape(-1) ép thảng
 
 #loop through array
 //loop qua array cùng datatype
@@ -30,7 +31,8 @@ for x in np.nditer(array):
   print(x)
 
 //loop qua array và đổi datatype
-//NumPy không trực tiếp đổi datatype của elemt (trong mảng) nên cần không gian, gọi vùng buffer, nditer() dùng cớ flags=['buffered'].
+//NumPy không trực tiếp đổi datatype của elemt (trong mảng) nên cần không gian, nên để gọi vùng nhớ buffer, 
+//nditer() dùng cớ flags=['buffered'].
 for x in np.nditer(arr, flags = ['buffered'], os_dtypes = ['S']):
   print(x)
 
@@ -116,5 +118,17 @@ Ví dụ, nếu một sự kiện trung bình xảy ra 1 lần trong 4 phút,
 giờ ta quan tâm số lần sự kiện xảy ra trong khoảng thời gian 10 phút, 
 ta dùng mô hình phân phối Poisson với λ = 10/4 = 2.5.
 
+#PHÂN PHỐI UNIFORM - RỜI RẠC
+random.uniform(size=(2, 3))
+low : lower bound - default 0 .0.
+high : upper bound - default 1.0.
+size :  hình dáng mảng trả về
 
-
+#ufuncts - tự động tính toán trên array, không cần loop, sử dung - do nó sử dụng mã C và tính toán song song của CPU thay vì loop lần lượt
+np.add(arr1, arr2)
+np.subtract(arr1, arr2)
+np.multiply(arr1, arr2)
+np.divide(arr1, arr2)
+np.power(arr1, arr2)
+np.mod(arr1, arr2)
+newarr = np.remainder(arr1, arr2)
