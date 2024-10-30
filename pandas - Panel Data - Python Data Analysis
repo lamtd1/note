@@ -1,1 +1,21 @@
 It has functions for analyzing, cleaning, exploring, and manipulating data.
+
+import pandas as pd
+
+#SERIES: 1 cột trong table - mảng 1 chiều chứa dữ liệu
+a = [1, 7, 2]
+
+pd.Series(a) // dùng với list hoặc dict được
+
+myvar = pd.Series(a) // Nếu không gán nhãn thì dùng chỉ số
+myvar[0]
+
+myvar = pd.Series(a, index = ["x", "y", "z"]) // Tự tạo chỉ số
+myvar['x']
+
+calories = {"day1": 420, "day2": 380, "day3": 390}
+myvar = pd.Series(calories, index = ["day1", "day2"]) // Dùng để chỉ định phần tử
+
+#DATAFRAME
+mảng 2D, chứa cả hàng và cột
+pd.DataFrame(myvar)
