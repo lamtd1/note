@@ -58,7 +58,7 @@ for x in [a, b, c]:
 
 - map(function/ lambda function, LIST)// apply function to every elements in LIST
 
-- zipped = zip(first_list, second_list)//bind 2 or more iterables (list, tuple, string) into a map-like object
+- zipped = zip(first_list, second_list)//bind 2 or more iterables (list, tuple, string) into a dict-like object
 x, y = zip(*zipped)// unzip object
 
 - string - slicing - immutable
@@ -74,9 +74,12 @@ string.index(); .upper() .lower() .strip() .lstrip() .rstrip()
 "delimiter".join(LIST) 
 
 - .format
+price = 100
 1.print("{name:>6.2f} {age:.3d}".format(name = "J", age = 12))
 2.print("{1} is my {0}, Hi {1}".format(friend, name))
 3.print("{name} I'm {pos}".format(pos="Brok", name="Hi"))
+4.print(f"this {price : 2.1}")
+
 
 - list - mutable
 list = ["val1", "val2", "val3"]
