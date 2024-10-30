@@ -8,7 +8,7 @@ type()
 sorted()//does not change the iterable that it sorts. 
 min() max()
 len()
-enumerate()// return a tuple of each element - 1 : index - 2 : value
+enumerate()// return a tuple of each element ~ 1 : index ~ 2 : value
 
 next() // to traverse the list.
 
