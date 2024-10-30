@@ -1,4 +1,4 @@
-<h1>create an array:</h1>
+#create an array:
 arr = np.narray([1,2,3]) / (1,2,3) / Tuples is OK too
 arr = np.array([[2],[4]])
 
@@ -35,4 +35,5 @@ for x in np.nditer(arr, flags = ['buffered'], os_dtypes = ['S']):
   print(x)
 
 #join 2 array
-
+sử dụng axis để concat ~ None, 0 , 1 , n -> được tổ chức theo zyx nên axis = 0 là theo z, axis = 1 là theo y và axis = 2 là theo x
+array.concatenate(arr1, arr2, axis = None) // 
