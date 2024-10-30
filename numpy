@@ -1,5 +1,5 @@
 #create an array:
-arr = np.narray([1,2,3]) / (1,2,3) / Tuples is OK too
+arr = np.narray([1,2,3]) // (1,2,3) / Tuples is OK too
 arr = np.array([[2],[4]])
 
 #array datatype:
@@ -9,7 +9,7 @@ c - complex
 S - string
 O - Object
 
-arr = np.array([1,2,3], dtype = 'i8')
+arr = np.array([1,2,3], dtype = 'i8') // quy định kiểu của elements
 print(arr.dtype)
 
 #array - reference/ copy
@@ -20,9 +20,9 @@ arr.view() / make a reference
 print(arr.base) / RETURN ORIGINAL ARRAY
 
 #array shape
-array.ndim
-array.shape
-array.reshape / này dùng nhiều -> TRỎ về MẢNG BAN ĐÂU -> pass và -1 đỡ phải tính -> reshape(-1) ép thảng
+array.ndim // trả về số chiều
+array.shape // hình dáng
+array.reshape / này dùng nhiều -> TRỎ về MẢNG BAN ĐÂU -> pass argument vào và -1 đỡ phải tính -> reshape(-1) ép thảng
 
 #loop through array
 //loop qua array cùng datatype
@@ -30,17 +30,17 @@ for x in np.nditer(array):
   print(x)
 
 //loop qua array và đổi datatype
-//NumPy không trực tiếp đổi datatype của elemt (trong mảng) nên cần không gian, gọi buffer, để enable nditer() dùng cớ flags=['buffered'].
+//NumPy không trực tiếp đổi datatype của elemt (trong mảng) nên cần không gian, gọi vùng buffer, nditer() dùng cớ flags=['buffered'].
 for x in np.nditer(arr, flags = ['buffered'], os_dtypes = ['S']):
   print(x)
 
 #join 2 array np.concatenate(arr1, arr2)
-sử dụng axis để concat ~ None, 0 , 1 , n -> được tổ chức theo zyx nên axis = 0 là theo z, axis = 1 là theo y và axis = 2 là theo x
-np.concatenate(arr1, arr2, axis = None) // 
+sử dụng axis để concat ~ None, 0 , 1 , n -> được tổ chức theo zyx nên axis = 0 là z, axis = 1 là y và axis = 2 là x
+np.concatenate(arr1, arr2, axis = None)
 
 #search array np.where(value == a)
 arr = np.array([1, 2, 3, 4, 5, 4, 4])
-x = np.where(arr == 4) // trả về index của value = 4
+x = np.where(arr == 4) // trả về index của value = 4 (3, 5, 6)
 
 #sort array np.sort(array)
 arr = np.array(['banana', 'cherry', 'apple'])
@@ -54,3 +54,67 @@ for x in arr:
 new_arr = arr[filter_array]
 2.filter_array = arr % 2 == 0
 new_arr = arr[filter_array]
+
+#RANDOM MODULE -> HÀM PHÂN PHỐI XÁC SUẤT
+from numpy import random
+
+random.randint(100) // 0 -> 100
+random.randint(100, size = (5))
+random.randint(100, size = (3,5))
+
+#LẤY RANDOM TRONG KHOẢNG 0,1
+random.rand() // float [0,1]
+random.rand(5) // 1D 
+raddom.rand(3, 5) // 2D
+
+#LẤY RANDOM TRONG ARRAY
+random.choice([1,2,4]) // lấy random trong 1 array
+random.choice([1,2,4], size = (3,5))
+
+#PHÂN PHỐI XÁC SUẤT
+random.choice([1,2,3,4], p = [0.1, 0.2, 0.3, 0.4] ,size = (3,3))
+
+#SINH XÂU
+random.shuffle(arr) // tham trị
+random.permutation(arr) // tham chiếu
+
+#MODULE SEABORN -> VẼ PHÂN PHỐI XÁC SUẤT -> LÀ 1 TV SỬ DỤNG MATPLOTLIB ĐỂ VẼ HÌNH
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+#Plotting a Displot
+sns.displot(array, kde = True, label = "PLOTING") // Cả cột và line
+sns.histplot(array, kde = True)  // Cả cột và line
+sns.kdeplot(array) // Chỉ dùng line
+
+#Plotting w/o histogram
+sns.displot(arr)
+
+#PHÂN PHỐI CHUẨN - GAUSS - LIÊN TỤC
+phân phối của nhiều sự kiện thực tế
+
+x = random.normal(loc=1, scale=2, size=(2, 3))
+loc: trung vị - đỉnh đồ thị
+scale: (Standard Deviation) đồ thị phân phối phẳng như thế nào
+size: hình dáng return array
+
+#PHÂN PHỐI NHỊ THỨC - RỜI RẠC
+phân phối của 1 tình hướng chỉ có 2 khả năng n lần - tung đồng xu
+
+x = random.binomical(p = 1 , n = 0.5, size = (10))
+p : số lần thử
+n : xác suất 
+size : hình dáng mảng trả về
+
+#PHÂN PHỐI POISSON - RỜI RẠC
+Ước tính số lần một sự kiện có thể xảy ra trong một thời gian nhất định.
+Nếu một người ăn hai lần một ngày thì xác suất người đó sẽ ăn ba lần là bao nhiêu?
+
+random.poisson(lam=2, size=10)
+lam : giá trị kì vọng xuất hiện của sự kiện trong một khoảng cho sẵn
+Ví dụ, nếu một sự kiện trung bình xảy ra 1 lần trong 4 phút, 
+giờ ta quan tâm số lần sự kiện xảy ra trong khoảng thời gian 10 phút, 
+ta dùng mô hình phân phối Poisson với λ = 10/4 = 2.5.
+
+
+
