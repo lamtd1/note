@@ -1,4 +1,4 @@
-#create an array:
+<h1>create an array:</h1>
 arr = np.narray([1,2,3]) / (1,2,3) / Tuples is OK too
 arr = np.array([[2],[4]])
 
@@ -25,4 +25,14 @@ array.shape
 array.reshape / này dùng nhiều -> trả về mảng ban đầu -> pass và -1 đỡ phải tính -> reshape(-1) ép thảng
 
 #loop through array
+//loop qua array cùng datatype
+for x in np.nditer(array):
+  print(x)
+
+//loop qua array và đổi datatype
+//NumPy không trực tiếp đổi datatype của elemt (trong mảng) nên cần không gian, gọi buffer, để enable nditer() dùng cớ flags=['buffered'].
+for x in np.nditer(arr, flags = ['buffered'], os_dtypes = ['S']):
+  print(x)
+
+#join 2 array
 
