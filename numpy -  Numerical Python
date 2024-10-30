@@ -1,7 +1,8 @@
 linear algebra, fourier transform, and matrices
 #create an array:
-arr = np.narray([1,2,3]) // (1,2,3) / Tuples is OK too
+arr = np.narray([1,2,3], ndmin = 2) // (1,2,3) / Tuples is OK too + yêu cầu số chiều là 2
 arr = np.array([[2],[4]])
+arr = np.arrange(1, 10) // trả về 1 mảng 1 - 9
 
 #array datatype:
 i - integer
@@ -125,10 +126,17 @@ high : upper bound - default 1.0.
 size :  hình dáng mảng trả về
 
 #ufuncts - tự động tính toán trên array, không cần loop, sử dung - do nó sử dụng mã C và tính toán song song của CPU thay vì loop lần lượt
-np.add(arr1, arr2)
+np.add(arr1, arr2) -> np.add.reduce(arr1) = np.sum(arr1) // reduce sẽ chia nhỏ arr thành từng phần tử rồi mới cộng vào
 np.subtract(arr1, arr2)
 np.multiply(arr1, arr2)
 np.divide(arr1, arr2)
 np.power(arr1, arr2)
 np.mod(arr1, arr2)
 newarr = np.remainder(arr1, arr2)
+
+#Hàm lượng giác
+np.sin() - np.cos() - np.cot() - np.tan() 
+np.arcsin() - np.arccos() - np.arccot() - np.arctan()
+np.pi
+np.deg2rad()
+np.rad2deg
