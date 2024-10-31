@@ -2,7 +2,8 @@ linear algebra, fourier transform, and matrices
 #create an array:
 arr = np.narray([1,2,3], ndmin = 2) // (1,2,3) / Tuples is OK too + yêu cầu số chiều là 2
 arr = np.array([[2],[4]])
-arr = np.arrange(1, 10) // trả về 1 mảng 1 - 9
+arr = np.arange(1, 10) // trả về 1 mảng 1 - 9
+arr = np.linspace(1, 100, 10) 10 evenly space between 1-100
 
 #array datatype:
 i - integer
