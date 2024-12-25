@@ -15,6 +15,12 @@ O - Object
 arr = np.array([1,2,3], dtype = 'i8') // quy định kiểu của elements
 print(arr.dtype)
 
+#Noi array
+w0 = np.ones(4)
+w1 = np.linspace(10,20,4)
+w = np.vstack((w0, w1)) // Xếp chồng
+w = np.hstack((w0, w1)) // Nối
+
 #array - reference/ copy
 arr.copy() / make a copy
 print(arr.base) / NOT A BASE
