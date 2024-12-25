@@ -23,7 +23,7 @@ w = np.hstack((w0, w1)) // Nối
 
 #array - reference/ copy
 arr.copy() / make a copy
-print(arr.base) / NOT A BASE
+print(arr.base) / Trả về None, nghĩa là không cùng địa chỉ vs arr cũ
 
 arr.view() / make a reference
 print(arr.base) / RETURN ORIGINAL ARRAY
