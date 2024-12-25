@@ -40,6 +40,7 @@ print(df) // Nếu set dữ liệu dài -> trả 10 dòng
 print(df.to_string()) // In hết dữ liệu ra
 pd.options.display.max_rows = 10000 // Tăng số cột có thể hiển thị lên
 
+df.to_csv(file_name, sep='\t') // xuất ra .csv
 2. Read JSON file
 df = pd.read_json('file.json')
 print(df.to_string()) 
