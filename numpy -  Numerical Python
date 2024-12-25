@@ -34,6 +34,12 @@ array.shape // hình dáng
 array.reshape(2,2,-1) / này dùng nhiều -> TRỎ về MẢNG BAN ĐÂU -> pass argument vào và -1 đỡ phải tính -> reshape(-1) ép thảng
 array.ravel() / Ép chiều
 
+#ma trận
+a = np.eye(10) // ma trận đơn vị
+a = np.diag([1,2,3,4]) // đường chéo chính có value
+a = np.diag([1,2,3,4], k =  -2) // dưới đường chéo chính 2 hàng
+
+
 #loop through array
 //loop qua array cùng datatype
 for x in np.nditer(array):
