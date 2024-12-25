@@ -7,7 +7,7 @@ import pandas as pd
 #Lấy thông tin
 df.info()
 df.describe()
-
+df.dtypes // Lấy thông tin từng code trong DataFrame
 
 #SERIES: 1 cột trong table - mảng 1 chiều chứa dữ liệu
 a = [1, 7, 2]
