@@ -88,8 +88,8 @@ random.choice([1,2,4], size = (3,5))
 random.choice([1,2,3,4], p = [0.1, 0.2, 0.3, 0.4] ,size = (3,3))
 
 #SINH XÂU
-random.shuffle(arr) // tham trị
-random.permutation(arr) // tham chiếu
+random.shuffle(arr) // tham chiếu 
+random.permutation(arr) // tham trị
 
 #MODULE SEABORN -> VẼ PHÂN PHỐI XÁC SUẤT -> LÀ 1 TV SỬ DỤNG MATPLOTLIB ĐỂ VẼ HÌNH
 import seaborn as sns
