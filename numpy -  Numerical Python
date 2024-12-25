@@ -15,7 +15,7 @@ O - Object
 arr = np.array([1,2,3], dtype = 'i8') // quy định kiểu của elements
 print(arr.dtype)
 
-#Noi array
+#Nối array axis = 0 là cột, axis = 1 là hàng
 w0 = np.ones(4)
 w1 = np.linspace(10,20,4)
 w = np.vstack((w0, w1)) // Xếp chồng
@@ -26,17 +26,20 @@ arr.copy() / make a copy
 print(arr.base) / Trả về None, nghĩa là không cùng địa chỉ vs arr cũ
 
 arr.view() / make a reference
-print(arr.base) / RETURN ORIGINAL ARRAY
+print(arr.base) / Trả về mảng ban đầu
 
 #array shape
 array.ndim // trả về số chiều
 array.shape // hình dáng
 array.reshape(2,2,-1) / này dùng nhiều -> TRỎ về MẢNG BAN ĐÂU -> pass argument vào và -1 đỡ phải tính -> reshape(-1) ép thảng
+array.ravel() / Ép chiều
 
 #loop through array
 //loop qua array cùng datatype
 for x in np.nditer(array):
   print(x)
+for x in a.ravel():
+    print(x)
 
 //loop qua array và đổi datatype
 //NumPy không trực tiếp đổi datatype của elemt (trong mảng) nên cần không gian, nên để gọi vùng nhớ buffer, 
