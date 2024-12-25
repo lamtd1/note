@@ -4,6 +4,11 @@ df.loc[i] : truy cập vào CỘT
 df[i] : truy cập vào HÀNG
 import pandas as pd
 
+#Lấy thông tin
+df.info()
+df.describe()
+
+
 #SERIES: 1 cột trong table - mảng 1 chiều chứa dữ liệu
 a = [1, 7, 2]
 
