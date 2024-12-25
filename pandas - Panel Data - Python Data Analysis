@@ -14,6 +14,8 @@ myvar[0]
 
 myvar = pd.Series(a, index = ["x", "y", "z"]) // Tự tạo chỉ số
 myvar['x']
+df = pd.DataFrame(a, columns = ["row1", "row2", "row3"],index = ["col1", "col2"])
+//tạo tên chỉ số hàng và cột
 
 calories = {"day1": 420, "day2": 380, "day3": 390}
 myvar = pd.Series(calories, index = ["day1", "day2"]) // Dùng để chỉ định phần tử
