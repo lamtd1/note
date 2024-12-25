@@ -49,7 +49,7 @@ for x in np.nditer(arr, flags = ['buffered'], os_dtypes = ['S']):
 
 #join 2 array np.concatenate(arr1, arr2)
 sử dụng axis để concat ~ None, 0 , 1 , n -> được tổ chức theo zyx nên axis = 0 là z, axis = 1 là y và axis = 2 là x
-np.concatenate(arr1, arr2, axis = None)
+np.concatenate((arr1, arr2), axis = None)
 
 #search array np.where(value == a)
 arr = np.array([1, 2, 3, 4, 5, 4, 4])
