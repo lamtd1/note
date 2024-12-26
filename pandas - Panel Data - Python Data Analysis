@@ -51,6 +51,10 @@ car_sales.groupby(["Make"]).mean(numeric_only=True)
 
 #Đổi kiểu
 car_data["Price"] = car_data["Price"].astype(int)
+#Đổi tên cột
+car_data = car_data.rename(columns = {"Odometer (KM)":"Odometer (Miles)"})
+#Đổi giá trị dùng lambda
+car_data["Odometer (KM)"] = car_data["Odometer (KM)"].apply(lambda  x: x/1.6)
 
 1. Read .csv file
 df = pd.read_csv(file_path) // Tự chuyển sang DataFrame
