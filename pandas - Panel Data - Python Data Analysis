@@ -39,6 +39,12 @@ from google.colab import drive
 drive.mount('/content/drive')
 file_path = '/content/drive/example.csv'
 
+#Tạo bảng tần suất
+a = pd.crosstab(bang1, bang2) // Tìm tần suất dựa trên tiêu chí của 2 bảng
+
+#GROUPBY như trong database
+car_sales.groupby(["Make"]).mean(numeric_only=True)
+
 1. Read .csv file
 df = pd.read_csv(file_path) // Tự chuyển sang DataFrame
 print(df) // Nếu set dữ liệu dài -> trả 10 dòng
