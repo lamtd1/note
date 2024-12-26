@@ -11,9 +11,7 @@ df.dtypes // Lấy thông tin từng code trong DataFrame
 
 #SERIES: 1 cột trong table - mảng 1 chiều chứa dữ liệu
 a = [1, 7, 2]
-
 pd.Series(a) // dùng với list hoặc dict được
-
 myvar = pd.Series(a) // Nếu không gán nhãn thì dùng chỉ số
 myvar[0]
 
@@ -44,6 +42,9 @@ a = pd.crosstab(bang1, bang2) // Tìm tần suất dựa trên tiêu chí của 
 
 #GROUPBY như trong database
 car_sales.groupby(["Make"]).mean(numeric_only=True)
+
+#Đổi kiểu
+car_data["Price"] = car_data["Price"].astype(int)
 
 1. Read .csv file
 df = pd.read_csv(file_path) // Tự chuyển sang DataFrame
