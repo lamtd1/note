@@ -4,6 +4,12 @@ df.loc[i] : truy cập vào CỘT
 df[i] : truy cập vào HÀNG
 import pandas as pd
 
+#Thêm 1 cột Engine Size
+car_data["Engine Size"] = engine_sizes
+#Xoá cột
+car_data.drop("Engine Size", axis =  0/ 1/ None)
+
+
 #Lấy thông tin
 df.info()
 df.describe()
