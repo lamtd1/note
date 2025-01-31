@@ -7,11 +7,43 @@ linuxOS - bash: Bourne Again Shell
 Since macOs and linuxOS are both built base on the Unix family, many command in 
 zsh & bash 're the same
 
+Turn file to script file
+test.py
+>>>#! usr/bin/env python3 : shebang
+chmod a+x test.py
+./test.py
+
+test.sh
+#!/bin/bash : shebang
+chmod a+x test.sh
+./test.sh
+
 II. Basic Linux commands
+man: show manual 
+eg: man mv
+
+cat file.txt: check file content
 
 mv(move): mv <src> <dst> mv myfile.txt dir1/
+
 cp(copy): cp <src> <dst> cp myfile.txt myfile1.txt
--------------------------------------------------------
+
+rm(remove): rm -rf dir/
+
+touch file.txt: create new file
+
+mkdir dir(make directory): create new dir
+
+cd(change directory): cd .., cd dir/, cd /, cd ~
+
+id: print info about the current user
+
+ps(process status): lists the processes executing in the current terminal for the current user
+    ps ax: lists all processes currently executing for all users  
+    ps e: shows the environment for the processes listed  
+
+kill PID: sends the SIGTERM signal to the process identified by PID
+
 chmod(change mode): chmod [options] [mode] [File_name]
 1) Symbolic mode
 + : add permission
@@ -35,3 +67,27 @@ VD: chmod u=rwx file.txt: owner read, write, execute
 1 : execute
 VD: chmod 777 file.txt == a=rwx
     chmod 674 file.txt == u=rw, g=rwx, o=r
+
+cut: extract field from file
+
+sort: sort the output
+
+fg: causes a job that was stopped or in the background to return to the foreground
+
+bg: causes a job that was stopped to go to the background
+
+jobs: lists the jobs currently running or stopped
+
+top: shows the processes currently using the most CPU time (press "q" to quit)  
+
+III. Redirections, Pipes, and Signals
+command > file: redirects standard output, overwrites file
+
+command >> file: redirects standard output, appends to file
+
+command < file: redirects standard input from file
+
+command 2> file: redirects standard error to file
+
+command1 | command2: connects the output of command1 to the input of command2
+
