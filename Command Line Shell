@@ -1,1 +1,37 @@
+I.Abstract
+There are a lot of shell, and they are different depend on their OS:
+Wins - powershell
+macOS - zsh: z shell
+linuxOS - bash: Bourne Again Shell
 
+Since macOs and linuxOS are both built base on the Unix family, many command in 
+zsh & bash 're the same
+
+II. Basic Linux commands
+
+mv(move): mv <src> <dst> mv myfile.txt dir1/
+cp(copy): cp <src> <dst> cp myfile.txt myfile1.txt
+-------------------------------------------------------
+chmod(change mode): chmod [options] [mode] [File_name]
+1) Symbolic mode
++ : add permission
+- : remove permission
+= : set permission -> specific
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+r : read
+w : write
+x : execute
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+u : owner
+o : others
+g : group
+a : all
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+VD: chmod u=rwx file.txt: owner read, write, execute
+    chmod go-w [file_name]: remove write from others and group
+2) Octal mode
+4 : read
+2 : write
+1 : execute
+VD: chmod 777 file.txt == a=rwx
+    chmod 674 file.txt == u=rw, g=rwx, o=r
