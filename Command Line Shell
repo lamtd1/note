@@ -8,6 +8,8 @@ Since macOs and linuxOS are both built base on the Unix family, many command in
 zsh & bash 're the same
 
 Turn file to script file
+which bash/python3
+
 test.py
 >>>#! usr/bin/env python3 : shebang
 chmod a+x test.py
