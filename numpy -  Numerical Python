@@ -1,4 +1,4 @@
-linear algebra, fourier transform, and matrices
+linear algebra, fourier transform, and matrices - Đại số tuyến tính
 #create an array:
 arr = np.array([1,2,3], ndmin = 2) // (1,2,3) / Tuples is OK too + yêu cầu số chiều là 2
 arr = np.array([[2],[4]])
