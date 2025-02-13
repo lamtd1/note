@@ -1,4 +1,4 @@
-It has functions for analyzing, cleaning, exploring, and manipulating data.
+It has functions for analyzing, cleaning, exploring, and manipulating data. - Chỉnh sửa Data
 CHÚ Ý: 
 df.loc[i] : truy cập vào CỘT
 df[i] : truy cập vào HÀNG
