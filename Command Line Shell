@@ -70,9 +70,13 @@ VD: chmod u=rwx file.txt: owner read, write, execute
 VD: chmod 777 file.txt == a=rwx
     chmod 674 file.txt == u=rw, g=rwx, o=r
 
-cut: extract field from file
+cut: Dùng để cắt chuỗi theo cột cố định cut -d'DELIMITER' -fFIELD_NUMBER
+
+awk '{print $1}': Mạnh hơn, hỗ trợ điều kiện & xử lý logic
 
 sort: sort the output
+
+lsof -i :9000 -t -P: t: trích ra port, i: trích ra TCP/IP, P: port -> trích ra PID dùng port 9000
 
 fg: causes a job that was stopped or in the background to return to the foreground
 
