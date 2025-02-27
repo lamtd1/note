@@ -76,7 +76,7 @@ awk '{print $1}': Mạnh hơn, hỗ trợ điều kiện & xử lý logic
 
 sort: sort the output
 
-lsof -i :9000 -t -P: t: trích ra port, i: trích ra TCP/IP, P: port -> trích ra PID dùng port 9000
+lsof -i :9000 -t: t: trích ra port, i: trích ra TCP/IP -> trích ra PID dùng port 9000
 
 fg: causes a job that was stopped or in the background to return to the foreground
 
