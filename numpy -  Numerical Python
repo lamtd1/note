@@ -31,6 +31,7 @@ np.arange(a, b, c)        # Tạo mảng giá trị cách đều (c = step)
 np.linspace(a, b, c)      # Tạo mảng giá trị cách đều (c = số phần tử)
 np.full((2,2,), 7)        # Tạo mảng 2x2 = 7
 np.empty((3,4))           # Tạo mảng trống 3x4
+np.random.random((2,2))   # Tạo mảng random 2x2
 np.eye(2)                 # Tạo ma trận đơn vị 2x2
 np.diag([1,2,3,4])        # Tạo ma trậ đường chéo chính có value
 np.diag([1,2,3,4], 
@@ -102,23 +103,28 @@ new_arr = arr[filter_array]
 new_arr = arr[filter_array]
 
 #RANDOM MODULE -> HÀM PHÂN PHỐI XÁC SUẤT
-from numpy import random
+from numpy
 
-random.randint(100) // 0 -> 100
-random.randint(100, size = (5))
-random.randint(100, size = (3,5))
+np.random.randint(100)              # Số nguyên ngẫu nhiên [0, 99]
+np.random.randint(50, 100, 
+size=(5))                           # Mảng 1D gồm 5 số nguyên [50, 99]
+np.random.randint(50, 100, 
+size=(3,5))                         # Mảng 2D kích thước 3x5 [50, 99]
+
 
 #LẤY RANDOM TRONG KHOẢNG 0,1
-random.rand() // float [0,1]
-random.rand(5) // 1D 
-raddom.rand(3, 5) // 2D
+np.random.rand()                   # Một số float ngẫu nhiên [0,1)
+np.random.rand(5)                  # Mảng 1D gồm 5 số
+np.random.rand(3, 5)               # Mảng 2D kích thước 3x5
 
 #LẤY RANDOM TRONG ARRAY
-random.choice([1,2,4]) // lấy random trong 1 array
-random.choice([1,2,4], size = (3,5))
+random.choice([1, 2, 4])        # Một phần tử
+random.choice([1, 2, 4], 
+size=(3, 5))                    # Mảng 3x5 các phần tử chọn ngẫu nhiên
+random.choice([1, 2, 3, 4], 
+p=[0.1, 0.2, 0.3, 0.4], 
+size=(3,3))                     # Theo phân phối xác suất
 
-#PHÂN PHỐI XÁC SUẤT
-random.choice([1,2,3,4], p = [0.1, 0.2, 0.3, 0.4] ,size = (3,3))
 
 #SINH XÂU
 random.shuffle(arr) // tham chiếu 
@@ -140,16 +146,16 @@ sns.displot(arr)
 phân phối của nhiều sự kiện thực tế
 
 x = random.normal(loc=1, scale=2, size=(2, 3))
-loc: trung vị - đỉnh đồ thị
-scale: (Standard Deviation) đồ thị phân phối phẳng như thế nào
-size: hình dáng return array
+loc: trung bình (mean)
+scale: độ lệch chuẩn (std)
+size:  kích thước mảng
 
 #PHÂN PHỐI NHỊ THỨC - RỜI RẠC
 phân phối của 1 tình hướng chỉ có 2 khả năng n lần - tung đồng xu
 
-x = random.binomical(p = 1 , n = 0.5, size = (10))
+x = random.binomial(p = 1 , n = 0.5, size = (10))
 p : số lần thử
-n : xác suất 
+n : xác suất thành công
 size : hình dáng mảng trả về
 
 #PHÂN PHỐI POISSON - RỜI RẠC
@@ -157,15 +163,17 @@ size : hình dáng mảng trả về
 Nếu một người ăn hai lần một ngày thì xác suất người đó sẽ ăn ba lần là bao nhiêu?
 
 random.poisson(lam=2, size=10)
+
 lam : giá trị kì vọng xuất hiện của sự kiện trong một khoảng cho sẵn
 Ví dụ, nếu một sự kiện trung bình xảy ra 1 lần trong 4 phút, 
 giờ ta quan tâm số lần sự kiện xảy ra trong khoảng thời gian 10 phút, 
 ta dùng mô hình phân phối Poisson với λ = 10/4 = 2.5.
 
 #PHÂN PHỐI UNIFORM - RỜI RẠC
-random.uniform(size=(2, 3))
-low : lower bound - default 0 .0.
-high : upper bound - default 1.0.
+random.uniform(low=0.0, high=1.0, size=(2, 3))
+
+low : giá trị nhỏ nhất
+high : giá trị lớn nhất
 size :  hình dáng mảng trả về
 
 #ufuncts - tự động tính toán trên array, không cần loop, sử dung - do nó sử dụng mã C và tính toán song song của CPU thay vì loop lần lượt
