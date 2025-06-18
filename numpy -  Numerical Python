@@ -1,44 +1,75 @@
 linear algebra, fourier transform, and matrices - Đại số tuyến tính
 #create an array:
-arr = np.array([1,2,3], ndmin = 2) // (1,2,3) / Tuples is OK too + yêu cầu số chiều là 2
-arr = np.array([[2],[4]])
-arr = np.arange(1, 10) // muốn khoảng cách là c trong khoảng a,b
-arr = np.linspace(1, 100, 10) muốn 10 giá trị trong khoảng a,b
+arr = np.array([1,2,3])
+arr = np.array([1,2,3], [4,5,6], dtype = float)
+arr = np.array([[(1.5,2,3), (4,5,6)],[(3,2,1), (4,5,6)]], dtype = float)
+
 
 #array datatype:
-i - integer
-f - float
-c - complex
-S - string
-O - Object
+np.int64
+np.float32
+np.complex
+np.bool
+np.object
+np.string_
+np.unicode_
 
-arr = np.array([1,2,3], dtype = 'i8') // quy định kiểu của elements
-print(arr.dtype)
 
-#Nối array axis = 0 là cột, axis = 1 là hàng
-w0 = np.ones(4)
-w1 = np.linspace(10,20,4)
-w = np.vstack((w0, w1)) // Xếp chồng
-w = np.hstack((w0, w1)) // Nối
+#inspecting array
+print(arr.shape)
+print(len(arr))
+print(arr.ndim)           # Số chiều trong mảng
+print(arr.size)           # Số phần tử trong mảng
+print(arr.dtype)          # Data type
+arr.astype(np.int64)      # Ép kiểu cho mảng
 
-#array - reference/ copy
+
+#initial placeholders
+np.zeros((3,4))           # Tạo mảng 3x4 0
+np.ones((3,4))            # Tạo mảng 3x4 1
+np.arange(a, b, c)        # Tạo mảng giá trị cách đều (c = step)
+np.linspace(a, b, c)      # Tạo mảng giá trị cách đều (c = số phần tử)
+np.full((2,2,), 7)        # Tạo mảng 2x2 = 7
+np.empty((3,4))           # Tạo mảng trống 3x4
+np.eye(2)                 # Tạo ma trận đơn vị 2x2
+np.diag([1,2,3,4])        # Tạo ma trậ đường chéo chính có value
+np.diag([1,2,3,4], 
+k =  -2)                  # Tạo ma trậ đường chéo chính có value, dưới đường chéo chính 2 hàng
+
+
+#copying arrays
 arr.copy() / make a copy
 print(arr.base) / Trả về None, nghĩa là không cùng địa chỉ vs arr cũ
 
 arr.view() / make a reference
 print(arr.base) / Trả về mảng ban đầu
 
-#array shape
-array.ndim // trả về số chiều
-array.shape // hình dáng
-array.reshape(2,2,-1) / này dùng nhiều -> TRỎ về MẢNG BAN ĐÂU -> pass argument vào và -1 đỡ phải tính -> reshape(-1) ép thảng
-array.ravel() / Ép chiều
 
-#ma trận
-a = np.eye(10) // ma trận đơn vị
-a = np.diag([1,2,3,4]) // đường chéo chính có value
-a = np.diag([1,2,3,4], k =  -2) // dưới đường chéo chính 2 hàng
+#array manipulation
+1. Transpose
+i = np.transpose(arr)     # Ma trận chuyển vị
+i = arr.T                 # Ma trận chuyển vị
 
+2. Thay đổi shape
+arr.reshape(2,2,-1)       # Ép theo shape -> TRỎ về MẢNG BAN ĐÂU
+arr.ravel()               # Ép thành 1D   -> TRỎ về MẢNG BAN ĐÂU
+arr.flatten()             # Ép thành 1D   -> TẠO MẢNG MỚI
+
+3. Thêm/ Bỏ phần tử
+arr.resize((3,4))         # Trả về mảng mới 3x4, nếu bé hơn thì cắt, nếu lớn thì thêm 0
+np.append(arr1, arr2)     # Nối 2 arr/ item với nhau
+np.insert(arr, loc, val)  # Insert val vào arr[loc]
+np.delete(arr, loc, axis) # Axis = 0/1 xoá theo hàng/cột
+
+4. Nối 2 arrays
+np.concatenate( 
+(arr1, arr2), axis)       # Nối arrays, 0/1: hàng/cột
+np.vstack((a,b))          # Nối theo cột
+np.hstack((a,b))          #　Nối theo hàng
+
+5. Tách array
+np.vsplit(a, n)           # Tách theo hàng
+np.hsplit(a, n)           # Tách theo cột
 
 #loop through array
 //loop qua array cùng datatype
@@ -52,10 +83,6 @@ for x in a.ravel():
 //nditer() dùng cớ flags=['buffered'].
 for x in np.nditer(arr, flags = ['buffered'], os_dtypes = ['S']):
   print(x)
-
-#join 2 array np.concatenate(arr1, arr2)
-sử dụng axis để concat ~ None, 0 , 1 , n -> được tổ chức theo zyx nên axis = 0 là z, axis = 1 là y và axis = 2 là x
-np.concatenate((arr1, arr2), axis = None)
 
 #search array np.where(value == a)
 arr = np.array([1, 2, 3, 4, 5, 4, 4])
