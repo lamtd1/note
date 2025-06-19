@@ -31,7 +31,7 @@ np.arange(a, b, c)        # Tạo mảng giá trị cách đều (c = step)
 np.linspace(a, b, c)      # Tạo mảng giá trị cách đều (c = số phần tử)
 np.full((2,2,), 7)        # Tạo mảng 2x2 = 7
 np.empty((3,4))           # Tạo mảng trống 3x4
-np.random.random((2,2))   # Tạo mảng random 2x2
+np.random.rand(2,2)       # Tạo mảng random uniform 2x2
 np.eye(2)                 # Tạo ma trận đơn vị 2x2
 np.diag([1,2,3,4])        # Tạo ma trậ đường chéo chính có value
 np.diag([1,2,3,4], 
@@ -72,6 +72,12 @@ np.hstack((a,b))          #　Nối theo hàng
 np.vsplit(a, n)           # Tách theo hàng
 np.hsplit(a, n)           # Tách theo cột
 
+
+# sort array np.sort(array)
+arr = np.array(['banana', 'cherry', 'apple'])
+print(np.sort(arr))
+
+
 #loop through array
 //loop qua array cùng datatype
 for x in np.nditer(array):
@@ -79,19 +85,15 @@ for x in np.nditer(array):
 for x in a.ravel():
     print(x)
 
-//loop qua array và đổi datatype
-//NumPy không trực tiếp đổi datatype của elemt (trong mảng) nên cần không gian, nên để gọi vùng nhớ buffer, 
-//nditer() dùng cớ flags=['buffered'].
+# loop qua array và đổi datatype
+# NumPy không trực tiếp đổi datatype của elemt (trong mảng) nên cần không gian, nên để gọi vùng nhớ buffer, 
+# nditer() dùng cờ flags=['buffered'].
 for x in np.nditer(arr, flags = ['buffered'], os_dtypes = ['S']):
   print(x)
 
-#search array np.where(value == a)
+# search array np.where(value == a)
 arr = np.array([1, 2, 3, 4, 5, 4, 4])
 x = np.where(arr == 4) // trả về index của value = 4 (3, 5, 6)
-
-#sort array np.sort(array)
-arr = np.array(['banana', 'cherry', 'apple'])
-print(np.sort(arr))
 
 #filter array
 1.filter_array = []
@@ -102,20 +104,25 @@ new_arr = arr[filter_array]
 2.filter_array = arr % 2 == 0
 new_arr = arr[filter_array]
 
-#RANDOM MODULE -> HÀM PHÂN PHỐI XÁC SUẤT
-from numpy
+# RANDOM MODULE -> HÀM PHÂN PHỐI XÁC SUẤT
+import numpy as np
 
-np.random.randint(100)              # Số nguyên ngẫu nhiên [0, 99]
-np.random.randint(50, 100, 
-size=(5))                           # Mảng 1D gồm 5 số nguyên [50, 99]
-np.random.randint(50, 100, 
-size=(3,5))                         # Mảng 2D kích thước 3x5 [50, 99]
+# Chuẩn , mean = 0, std = 1
+np.random.randn()               # một số float ~ N(0,1)
+np.random.randn(3)              # mảng 1D độ dài 3
+np.random.randn(2,4)            # mảng 2×4
 
+# Uniform trên khoảng [0.0, 1.0)
+np.random.rand()                # một số float [0,1)
+np.random.rand(5)               # mảng 1D độ dài 5
+np.random.rand(2,3)             # mảng 2×3
 
-#LẤY RANDOM TRONG KHOẢNG 0,1
-np.random.rand()                   # Một số float ngẫu nhiên [0,1)
-np.random.rand(5)                  # Mảng 1D gồm 5 số
-np.random.rand(3, 5)               # Mảng 2D kích thước 3x5
+# Rời rạc, đồng nhất trên các số nguyên
+np.random.randint(10)           # một số trong [0,10)
+np.random.randint(5, 15)        # một số trong [5,15)
+np.random.randint(0, 100, 
+size=(2,3))                     # mảng 2×3 số nguyên [0,100)
+
 
 #LẤY RANDOM TRONG ARRAY
 random.choice([1, 2, 4])        # Một phần tử
