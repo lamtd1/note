@@ -15,6 +15,10 @@ np.string_
 np.unicode_
 
 
+#array operations
+arr1 * arr2 : element-wise
+arr1 @ arr2 : nhân 2 ma trận
+
 #inspecting array
 print(arr.shape)
 print(len(arr))
