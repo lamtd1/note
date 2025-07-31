@@ -48,16 +48,16 @@ print(arr.base) / Trả về mảng ban đầu
 
 #array manipulation
 1. Transpose
-i = np.transpose(arr)     # Ma trận chuyển vị
-i = arr.T                 # Ma trận chuyển vị
+i = np.transpose(arr)     # Ma trận chuyển vị   view
+i = arr.T                 # Ma trận chuyển vị   view
 
 2. Thay đổi shape
-arr.reshape(2,2,-1)       # Ép theo shape -> TRỎ về MẢNG BAN ĐÂU
-arr.ravel()               # Ép thành 1D   -> TRỎ về MẢNG BAN ĐÂU
+arr.reshape(2,2,-1)       # Ép theo shape -> TRỎ về MẢNG BAN ĐÂU nếu có thể
+arr.ravel()               # Ép thành 1D   -> TRỎ về MẢNG BAN ĐÂU nếu có thể    
 arr.flatten()             # Ép thành 1D   -> TẠO MẢNG MỚI
 
 3. Thêm/ Bỏ phần tử
-arr.resize((3,4))         # Trả về mảng mới 3x4, nếu bé hơn thì cắt, nếu lớn thì thêm 0
+arr.resize((3,4))         # Thay đổi mảng tại chỗ mảng mới 3x4, nếu bé hơn thì cắt, nếu lớn thì thêm 0
 np.append(arr1, arr2)     # Nối 2 arr/ item với nhau
 np.insert(arr, loc, val)  # Insert val vào arr[loc]
 np.delete(arr, loc, axis) # Axis = 0/1 xoá theo hàng/cột
